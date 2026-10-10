@@ -1,0 +1,18 @@
+services:
+  screenshot-api:
+    build: .
+    ports:
+      - "3111:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - POOL_MIN=2
+      - POOL_MAX=8
+    restart: unless-stopped
+    # Shared memory needed for Chromium
+    shm_size: '1gb'
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'

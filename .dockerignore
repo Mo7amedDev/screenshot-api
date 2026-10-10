@@ -1,0 +1,44 @@
+# ── Version control ───────────────────────────────────────────────────────────
+.git
+.gitignore
+.gitattributes
+
+# ── Docker files themselves ───────────────────────────────────────────────────
+.dockerignore
+docker-compose.yml
+docker-compose.*.yml
+
+# ── Node modules (Docker rebuilds these from package.json) ───────────────────
+node_modules
+
+# ── TypeScript build output (Docker builds this fresh from src/) ─────────────
+dist
+
+# ── Local dev / test tooling ──────────────────────────────────────────────────
+.env
+.env.*
+*.log
+npm-debug.log*
+
+# ── OS clutter ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor config ─────────────────────────────────────────────────────────────
+.vscode
+.idea
+*.swp
+*.swo
+
+# ── Test / CI files ───────────────────────────────────────────────────────────
+*.test.ts
+*.spec.ts
+coverage
+.nyc_output
+
+# ── Misc project files not needed in image ────────────────────────────────────
+README.md
+CHANGELOG.md
+*.md
+storage
